@@ -1,0 +1,62 @@
+<!-- 
+<h3 *ngIf="obsTextMsg | async as message"> {{ message }} </h3>
+
+<h3>Book Details</h3>
+<ul>
+  <li *ngFor="let book of obsBooks | async" >
+    Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}, Year: {{book.year}}
+  </li>
+</ul>
+-->
+
+<!-- <h3>Filter Books</h3> -->
+<form [formGroup]="bookForm" (ngSubmit)="onFormSubmit()">
+	Select Category:
+	<select formControlName="category">
+		<option *ngFor="let cat of categories" [ngValue]="cat.category">
+		  {{ cat.category }}
+		</option>
+	</select>
+	Select Year:
+	<select formControlName="year">
+		<option *ngFor="let yr of years" [ngValue]="yr.year">
+		  {{ yr.year }}
+		</option>
+	</select>
+	<button>SUBMIT</button>
+</form>
+Result:
+<ul>
+  <li *ngFor="let book of books" >
+    Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}, Year: {{book.year}}
+  </li>
+</ul>
+<!--
+<h3>Favorite Books</h3>
+
+<ul>
+  <li *ngFor="let book of favBooks" >
+    Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}, Year: {{book.year}}
+  </li>
+</ul>
+
+<h3>Favorite Writer Details</h3>
+<div *ngIf="favWriter">
+  Writer Id: <b>{{favWriter.writerId}}</b>, Writer Name: <b>{{favWriter.writerName}}</b>
+  <ul>
+    <li *ngFor="let book of favWriter.books" >
+      Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}, Year: {{book.year}}
+    </li>
+  </ul>
+</div>
+
+<h3>Writer Details</h3>
+<div *ngIf="writer">
+  Writer Id: <b>{{writer.writerId}}</b>, Writer Name: <b>{{writer.writerName}}</b>
+  <ul>
+    <li *ngFor="let book of writer.books" >
+      Id: {{book.id}}, Name: {{book.name}}, Category: {{book.category}}, Year: {{book.year}}
+    </li>
+  </ul>
+</div>
+-->
